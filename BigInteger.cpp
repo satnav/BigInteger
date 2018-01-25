@@ -470,7 +470,7 @@ std::string BigInteger::ToString() const
 
 // -------------------------------------------------------------------------------------
 
-std::vector<Digit> BigInteger::GetDigits() const
+std::vector<BigInteger::Digit> BigInteger::GetDigits() const
 {
     return mDigits;
 }
