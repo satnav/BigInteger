@@ -470,6 +470,13 @@ std::string BigInteger::ToString() const
 
 // -------------------------------------------------------------------------------------
 
+std::vector<Digit> BigInteger::GetDigits() const
+{
+    return mDigits;
+}
+
+// -------------------------------------------------------------------------------------
+
 std::pair<BigInteger, BigInteger> BigInteger::Divide(const BigInteger& lhs, const BigInteger& rhs)
 {
     if (rhs == 0)

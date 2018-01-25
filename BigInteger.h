@@ -182,6 +182,10 @@ public:
     /// @return The object as a string.
     std::string ToString() const;
 
+    /// Returns the vector containing the digits.
+    /// @return The digits.
+    std::vector<Digit> GetDigits() const;
+
 private:
     /// Holds all the digits of the number.
     std::vector<Digit> mDigits;

@@ -112,13 +112,14 @@ int main(int argc, char** argv)
     TestEqual("-2", BigInteger(-618274569182) / BigInteger(264513595812));                                  // (-ve) + (+ve)
     TestEqual("0", BigInteger(-76823658126132) / BigInteger(-98456138476543));                              // (-ve) + (-ve)
     TestEqual("0", BigInteger(12314) / BigInteger(69874561928735));                                         // lhs < rhs
-    TestEqual("298921", BigInteger(12837501927635) / BigInteger(42946123));
-    TestEqual("10000000", BigInteger(10000000) / BigInteger(1));                                 // lhs > rhs
+    TestEqual("298921", BigInteger(12837501927635) / BigInteger(42946123));                                 // lhs > rhs
+    TestEqual("10000000", BigInteger(10000000) / BigInteger(1));
+    TestEqual("0", BigInteger(0) / BigInteger(100));
     TestException<std::logic_error>([]() { BigInteger(1) / BigInteger(0); });                               // test exception
 
     // Test modulus
-    TestEqual("35651841216", BigInteger(5819083357103) % BigInteger(64982376583));                         // (+ve) + (+ve)
-    TestEqual("429531434", BigInteger(999235781624) % BigInteger(-1659146595));                           // (+ve) + (-ve)
+    TestEqual("35651841216", BigInteger(5819083357103) % BigInteger(64982376583));                          // (+ve) + (+ve)
+    TestEqual("429531434", BigInteger(999235781624) % BigInteger(-1659146595));                             // (+ve) + (-ve)
     TestEqual("-89247377558", BigInteger(-618274569182) % BigInteger(264513595812));                        // (-ve) + (+ve)
     TestEqual("-192394066908", BigInteger(-76823658126132) % BigInteger(-456138476543));                    // (-ve) + (-ve)
     TestEqual("12314", BigInteger(12314) % BigInteger(69874561928735));                                     // lhs < rhs
